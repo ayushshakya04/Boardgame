@@ -64,7 +64,7 @@ public class HomeController {
             User user = new User(userName, encodedPassword, authorityList);
 
             jdbcUserDetailsManager.createUser(user);
-            redirectAttrs.addFlashAttribute("userAddedMsg", "User succesfully added the message!");
+            redirectAttrs.addFlashAttribute("userAddedMsg", "User succesfully added!");
             return "redirect:/";
         }
     }
