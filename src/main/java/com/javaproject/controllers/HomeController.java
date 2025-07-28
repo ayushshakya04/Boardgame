@@ -57,14 +57,14 @@ public class HomeController {
 
         // check existing user
         if (jdbcUserDetailsManager.userExists(userName)) {
-            model.addAttribute("errorMsg", "User name already Exists. Try a different user names.");
+            model.addAttribute("errorMsg", "User name already Exists. Try a different user name.");
             model.addAttribute("authorities", authorityList);
             return "new-user";
         } else {
             User user = new User(userName, encodedPassword, authorityList);
 
             jdbcUserDetailsManager.createUser(user);
-            redirectAttrs.addFlashAttribute("userAddedMsg", "User succesfully added the message!");
+            redirectAttrs.addFlashAttribute("userAddedMsg", "User succesfully added!");
             return "redirect:/";
         }
     }
